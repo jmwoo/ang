@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.css.map">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+<body>
+  <div ng-controller="MainCtrl">
+    <ol class="posts">
+      <li ng-repeat="post in posts">
+        <p>{{post.text}}</p>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
