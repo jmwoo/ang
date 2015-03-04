@@ -1,5 +1,11 @@
-var MainCtrl = function ($scope) {
-  $scope.posts = [{text: 'post-1'}, {text: 'post-2'}];
-};
+angular.module('app', []).controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+	$scope.posts = [];
 
-angular.module('app', []).controller('MainCtrl', ['$scope', MainCtrl]);
+	var get = function () {
+		$http.get('/posts').then(function (resp) {
+			$scope.posts = resp.data;
+		});
+	};
+  	
+  	get();
+}]);
